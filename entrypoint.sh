@@ -1,5 +1,6 @@
 #!/bin/bash
 
+mkdir -p /var/log/tor/
 touch /var/log/tor/notices.log
 chown tor:nogroup /var/log/tor/notices.log
 

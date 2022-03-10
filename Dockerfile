@@ -11,7 +11,7 @@ RUN apk upgrade --update \
     && ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime \
     && echo "${TZ}" > /etc/timezone \
     && rm -rf /var/cache/apk/*
-#    && ln -sf /dev/stdout /var/log/tor/notices.log \
+    # && ln -sf /dev/stdout /var/log/tor/notices.log \
 
 #COPY torrc /etc/tor/torrc
 COPY torrc /torrc

@@ -24,3 +24,31 @@ docker run -d --name tor -p 9100:9100 mritd/tor
 - HTTPProxy: Tor 前置 HTTP 代理，众所周知的原因国内 Tor 节点无法连接，所以如需设置前置代理请修改此项
 - HTTPSProxy: Tor 前置 HTTPS 代理，作用同上
 - Socks5Proxy: Tor 前置 Socks5 代理，作用同上
+
+## docker compose 样例
+
+```yaml
+version: '3'
+services:
+
+  tor:
+    container_name: tor
+    image: bloodstar/tor:latest
+    ports:
+      - "9100:9100"
+    volumes:
+      - ${USERDIR}/tor/etc/:/app/etc/
+
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+
+    restart: always
+
+```
+
+${USERDIR} 为tor 配置文件目录
+${USERDIR}/tor/etc/torrc 中修改你自己的配置
+
+首次启动，会在`${USERDIR}/tor/etc/`目录中生成默认配置文件torrc，和torrc.sample这两个文件

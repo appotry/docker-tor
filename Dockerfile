@@ -13,7 +13,9 @@ RUN apk upgrade --update \
     && echo "${TZ}" > /etc/timezone \
     && rm -rf /var/cache/apk/*
 
-COPY torrc /etc/tor/torrc
+#COPY torrc /etc/tor/torrc
+COPY torrc /torrc
+
 COPY entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /*.sh

@@ -38,7 +38,7 @@ services:
       - "9100:9100"
     volumes:
       - ${USERDIR}/tor/etc/:/app/etc/
-
+      - ${USERDIR}/tor/log/notices.log:/var/log/tor/notices.log
     environment:
       - PUID=${PUID}
       - PGID=${PGID}

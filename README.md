@@ -2,7 +2,7 @@
 
 ## Alpine Tor
 
-> 这是一个匿名代理工具 Tor 的 docker 镜像，基于 alpine 制作
+> 这是一个匿名代理工具 Tor 的 docker 镜像，基于 alpine 制作。 支持amd64,arm64,arm v7。
 
 
 ### Tor 使用
